@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import CartWidget from './CartWidget';
 const Navbar = () => {
     return (
         <div>
@@ -32,10 +32,7 @@ const Navbar = () => {
         <a class="nav-link disabled"></a>
         </li>
     </ul>
-    <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+    <CartWidget/>
     </div>
 </div>
 </nav>
