@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 import React from "react";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Badge from "@material-ui/core/Badge";
@@ -26,10 +27,10 @@ export default function App() {
             <RemoveIcon fontSize="small" />
             </Button>
             <Button
-            onClick={() => {
-                setItemCount(itemCount + 1);
+            onClick={() => { 
+                {if (itemCount<5) setItemCount(itemCount+1)
             }}
-            >
+        }>
             {" "}
             <AddIcon fontSize="small" />
             </Button>
