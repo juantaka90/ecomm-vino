@@ -3,16 +3,16 @@ import ItemListContainer from './components/ItemListContainer';
 import Navbar from './components/Navbar';
 import ItemCount from './components/ItemCount';
 import { ListItem } from '@material-ui/core';
-import { CustomFetch } from './customFetch';
-import { useEffect } from 'react';
-import { products } from './components/ItemList';
+// import { CustomFetch } from './customFetch';
+// import { useEffect } from 'react';
+// import { products } from './components/ItemList';
 function App() {
 
-  useEffect (() => {
-    CustomFetch(2000, products)
-    .then(response => products(response))
-    .catch(error => console.log(error))
-  }, [])
+  // useEffect (() => {
+  //   CustomFetch(2000, products)
+  //   .then(response => products(response))
+  //   .catch(error => console.log(error))
+  // }, [])
 
   return (
     <>
@@ -23,11 +23,11 @@ function App() {
     <div className="App">
     </div>
     <hr />
-    <ul>{
+    {/* <ul>{
 
       products.map(item =><li key={item.id}>{item.name}</li>)
       }
-    </ul>
+    </ul> */}
     </>
   );
 }

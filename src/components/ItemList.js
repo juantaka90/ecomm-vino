@@ -1,4 +1,7 @@
-function ItemList(){}
+import { CustomFetch } from './customFetch';
+import { useEffect } from 'react';
+import Item from './Item';
+
 const products = [
     {
     id: 30,
@@ -43,6 +46,32 @@ const products = [
     URL: "https://ep01.epimg.net/elcomidista/imagenes/2020/08/31/articulo/1598909097_396757_1598912857_sumario_normal.jpg"
     }
 ]
-module.exports = {
-    products, ItemList
-}
+
+export function ItemList() {
+
+    useEffect (() => {
+        CustomFetch(2000, products)
+        .then(response => products(response))
+        .catch(error => console.log(error))
+    }, [])
+    
+        return (
+        <div>
+        
+            {products.length > 0 ? (
+        products.map((item) => (
+            <Item
+            key={item.id}
+            name={item.name}
+            stock={item.stock}
+            cost={item.cost}
+            URL={item.URL}
+        />
+            ))
+        ) : (
+        <p>Cargando...</p>
+        )}
+        </div>
+    );
+        }
+        

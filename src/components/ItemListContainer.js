@@ -4,9 +4,10 @@ function ItemListContainer() {
 
     return (
         <div>
-        <p>Proximo Listado</p>
+            <ItemList/>
         </div>
     );
     }
-    <ItemList/>
+
+
 export default ItemListContainer;
