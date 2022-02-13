@@ -1,33 +1,27 @@
 import './App.css';
-import ItemListContainer from './components/ItemListContainer';
+// import ItemListContainer from './components/ItemListContainer';
 import Navbar from './components/Navbar';
 import ItemCount from './components/ItemCount';
 import { ListItem } from '@material-ui/core';
-// import { CustomFetch } from './customFetch';
-// import { useEffect } from 'react';
-// import { products } from './components/ItemList';
-function App() {
+import { ItemDetailContainer } from './components/ItemDetailContainer';
+import { ItemDetail } from './components/ItemDetail';
 
-  // useEffect (() => {
-  //   CustomFetch(2000, products)
-  //   .then(response => products(response))
-  //   .catch(error => console.log(error))
-  // }, [])
+
+
+
+function App() {
 
   return (
     <>
     <Navbar />
-    <ItemListContainer />
+    {/* <ItemListContainer /> */}
     <ItemCount />
     <ListItem />
+    <ItemDetailContainer />
+    <ItemDetail />
     <div className="App">
     </div>
     <hr />
-    {/* <ul>{
-
-      products.map(item =><li key={item.id}>{item.name}</li>)
-      }
-    </ul> */}
     </>
   );
 }

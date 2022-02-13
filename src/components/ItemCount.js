@@ -12,7 +12,7 @@ export default function App() {
     
     return (
     <div style={{ display: "block", padding: 40 }}>
-        <h4>Agregar Al Cariito</h4>
+        <h4>Agregar Al Carrito</h4>
         <div>
         <Badge color="primary" badgeContent={itemCount}>
             <ShoppingCartIcon />{" "}
