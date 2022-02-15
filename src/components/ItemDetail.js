@@ -1,5 +1,5 @@
-export function ItemDetail ({name, stock, cost, URL}){
-
+export function ItemDetail ({name, stock, cost, URL, describe}){
+    
     return (
         <div class=" row-cols-1 row-cols-md-3 ">
 <div class="col">
@@ -8,6 +8,7 @@ export function ItemDetail ({name, stock, cost, URL}){
     <div class="card-body">
         <h5 class="card-title">cantidad {stock}</h5>
         <p class="card-text">precio {cost}</p>
+        <p class= "card-text">Descripcion: {describe}</p>
     </div>
     <div class="card-footer">
         <small class="text-muted"></small>
