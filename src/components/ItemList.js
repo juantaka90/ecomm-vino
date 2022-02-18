@@ -1,5 +1,5 @@
 import { CustomFetch } from './customFetch';
-import { useEffect } from 'react';
+import { useEffect, useParams } from 'react';
 import Item from './Item';
 
 const products = [
@@ -48,12 +48,13 @@ const products = [
 ]
 
 export function ItemList() {
+    const {id} = useParams();
 
     useEffect (() => {
-        CustomFetch(2000, products)
+        CustomFetch(2000, products.filter(item => item.id === parseInt(id)))
         .then(response => products(response))
         .catch(error => console.log(error))
-    }, [])
+    }, []);
     
         return (
         <div>

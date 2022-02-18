@@ -1,6 +1,7 @@
 import { ItemDetail } from "./ItemDetail";
 import { CustomFetch } from "./customFetch";
 import { useEffect, useState } from "react";
+import ItemCount from './ItemCount'
 const { productos } = require('./productos');
 
 export function ItemDetailContainer () {
@@ -14,6 +15,7 @@ export function ItemDetailContainer () {
 
 return (
     <div>
+        <ItemCount />
         <ItemDetail
         name = {data.name}
         describe = {data.describe}
