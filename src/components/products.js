@@ -1,9 +1,4 @@
-import { CustomFetch } from './customFetch';
-import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import Item from './Item';
-
-const products = [
+export const products = [
     {
     id: 30,
     name: "Castro Ventosa 750 ml",
@@ -47,40 +42,3 @@ const products = [
     URL: "https://ep01.epimg.net/elcomidista/imagenes/2020/08/31/articulo/1598909097_396757_1598912857_sumario_normal.jpg"
     }
 ]
-
-export function ItemList() {
-    const {id} = useParams();
-
-    useEffect (() => {
-        if (id === undefined) {
-            CustomFetch(2000, products)
-        .then(response => products(response))
-        .catch(error => console.log(error))
-        } else {
-        CustomFetch(2000, products.filter(item => item.id === id))
-        .then(response => products(response))
-        .catch(error => console.log(error))
-        }
-    }, [id]);
-    
-        return (
-        <div>
-        
-            {products.length > 0 ? (
-        products.map((item) => (
-            <Item
-            key={item.id}
-            name={item.name}
-            stock={item.stock}
-            cost={item.cost}
-            URL={item.URL}
-            id={item.id}
-        />
-            ))
-        ) : (
-        <p>Cargando...</p>
-        )}
-        </div>
-    );
-        }
-        
