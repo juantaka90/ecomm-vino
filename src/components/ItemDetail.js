@@ -1,7 +1,7 @@
 export function ItemDetail ({name, stock, cost, URL, describe}){
     
     return (
-        <div className=" row-cols-1 row-cols-md-3 ">
+        <div className=" row-cols-3 row-cols-md-5 ">
 <div className="col">
     <div className="card h-50">
     <img src={URL} className="card-img-top" alt={name}/>

@@ -2,20 +2,21 @@ import { ItemDetail } from "./ItemDetail";
 import { CustomFetch } from "./customFetch";
 import { useEffect, useState } from "react";
 import ItemCount from './ItemCount'
+import { useParams } from "react-router-dom";
 const { productos } = require('./productos');
 
 export function ItemDetailContainer () {
     const [ data , setData] = useState({});
+    const {id} = useParams()
     
     useEffect (() => {
-        CustomFetch(2000, productos[3])
+        CustomFetch(2000, productos.find(i => i.id === parseInt(id)))
         .then(response => setData(response))
         .catch(error => console.log(error))
-    }, []);
+    }, [id]);
 
 return (
     <div>
-        <ItemCount />
         <ItemDetail
         name = {data.name}
         describe = {data.describe}
@@ -24,6 +25,7 @@ return (
         cost = {data.cost}
         stock = {data.stock}
             />
+            <ItemCount />
             </div>
     )
 }

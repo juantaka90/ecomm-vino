@@ -2,9 +2,7 @@ import { CustomFetch } from './customFetch';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Item from './Item';
-import {products} from './products';
-
-
+import {productos} from './productos';
 
 export function ItemList() {
     const [ item , setDato] = useState([]);
@@ -12,17 +10,20 @@ export function ItemList() {
 
     useEffect (() => {
         if (categoryId === undefined) {
-            CustomFetch(2000, products)
+            CustomFetch(2000, productos)
         .then(response => setDato(response))
         .catch(error => console.log(error))
         } else {
-        CustomFetch(2000, products.filter(item => item.category === categoryId))
+        CustomFetch(2000, productos.filter(item => item.category === categoryId))
         .then(response => setDato(response))
         .catch(error => console.log(error))
         }
     },[categoryId]);
     
-        return (
+    if(item.length === 0){
+        return <div><p>Cargando...</p></div>
+    }else {
+                return (
         <div>
 
             {item.map ((item) => (
@@ -35,6 +36,5 @@ export function ItemList() {
             id={item.id}
         />
             ))}
-        <p>Cargando...</p>
         </div>
-        )}
+        )}}
