@@ -1,4 +1,23 @@
+import { Link } from 'react-router-dom';
+import Item from './Item';
+import { useState } from 'react';
+
 export function ItemDetail ({name, stock, cost, URL, describe}){
+    const [ItemCount, setItemCount] = useState(0);
+    const onAdd = (cant) => {
+        alert("Seleccionaste " + cant + "items");
+        setItemCount(cant);
+    }
+
+    if(ItemCount.lenght === 0) {
+        ( <ItemCount stock={Item.stock} initial={ItemCount} onAdd={onAdd} />
+            )
+        
+        (ItemCount.lenght === + 1)
+        (
+        <Link to='/Cart'><button type="button" class="btn btn-back">Back</button> </Link>
+        )
+        }
     
     return (
         <div className=" row-cols-3 row-cols-md-5 ">
@@ -16,5 +35,5 @@ export function ItemDetail ({name, stock, cost, URL, describe}){
     </div>
 </div>
 </div>
-    )
-}
+)
+    }

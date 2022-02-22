@@ -7,12 +7,12 @@ import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 
-export default function App() {
+export default function ItemCount({ onAdd })  {
     const [itemCount, setItemCount] = React.useState(1);
     
     return (
-    <div style={{ display: "block", padding: 40 }}>
-        <h4>Agregar Al Carrito</h4>
+    <div style={{ display: "block", padding: 40 }} >
+        <button type="button" className="btn btn-primary" onClick={() => onAdd(itemCount)} > Agregar Al Carrito </button>
         <div>
         <Badge color="primary" badgeContent={itemCount}>
             <ShoppingCartIcon />{" "}
@@ -20,14 +20,14 @@ export default function App() {
         <ButtonGroup>
             <Button
             onClick={() => {
-                setItemCount(Math.max(itemCount - 1, 0));
+            setItemCount(Math.max(itemCount - 1, 0));
             }}
             >
             {" "}
             <RemoveIcon fontSize="small" />
             </Button>
             <Button
-            onClick={() => { 
+            onClick={() => {
                 {if (itemCount<5) setItemCount(itemCount+1)
             }}
         }>
