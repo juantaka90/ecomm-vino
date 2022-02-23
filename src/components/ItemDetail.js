@@ -1,24 +1,14 @@
 import { Link } from 'react-router-dom';
-import Item from './Item';
 import { useState } from 'react';
+import ItemCount from './ItemCount';
 
 export function ItemDetail ({name, stock, cost, URL, describe}){
-    const [ItemCount, setItemCount] = useState(0);
+    const [itemCount, setitemCount] = useState(0);
     const onAdd = (cant) => {
         alert("Seleccionaste " + cant + "items");
-        setItemCount(cant);
+        setitemCount(cant);
     }
 
-    if(ItemCount.lenght === 0) {
-        ( <ItemCount stock={Item.stock} initial={ItemCount} onAdd={onAdd} />
-            )
-        
-        (ItemCount.lenght === + 1)
-        (
-        <Link to='/Cart'><button type="button" class="btn btn-back">Back</button> </Link>
-        )
-        }
-    
     return (
         <div className=" row-cols-3 row-cols-md-5 ">
 <div className="col">
@@ -33,6 +23,11 @@ export function ItemDetail ({name, stock, cost, URL, describe}){
         <small className="text-muted"></small>
     </div>
     </div>
+    {
+        itemCount === 0
+        ? <ItemCount onAdd={onAdd} />
+        : <Link to='/Cart'><button type="button" class="btn btn-success"> Chequeo </button> </Link>
+    }
 </div>
 </div>
 )

@@ -25,7 +25,6 @@ return (
         cost = {data.cost}
         stock = {data.stock}
             />
-            <ItemCount />
             </div>
     )
 }

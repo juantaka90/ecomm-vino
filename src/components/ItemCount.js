@@ -12,7 +12,7 @@ export default function ItemCount({ onAdd })  {
     
     return (
     <div style={{ display: "block", padding: 40 }} >
-        <button type="button" className="btn btn-primary" onClick={() => onAdd(itemCount)} > Agregar Al Carrito </button>
+        <button onClick={() => onAdd(itemCount)} type="button" className="btn btn-primary" > Agregar Al Carrito </button>
         <div>
         <Badge color="primary" badgeContent={itemCount}>
             <ShoppingCartIcon />{" "}
