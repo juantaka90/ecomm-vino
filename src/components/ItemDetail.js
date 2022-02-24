@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import ItemCount from './ItemCount';
+import { CartContext } from './CartContext';
 
 export function ItemDetail ({name, stock, cost, URL, describe}){
     const [itemCount, setitemCount] = useState(0);
+    const thing = useContext(CartContext);
+
     const onAdd = (cant) => {
         alert("Seleccionaste " + cant + "items");
         setitemCount(cant);
+        thing.addToCart(ItemDetail, cant)
     }
 
     return (
@@ -26,7 +30,7 @@ export function ItemDetail ({name, stock, cost, URL, describe}){
     {
         itemCount === 0
         ? <ItemCount onAdd={onAdd} />
-        : <Link to='/Cart'><button type="button" class="btn btn-success"> Chequeo </button> </Link>
+        : <Link to='/Cart'><button type="button" className="btn btn-success"> Chequeo </button> </Link>
     }
 </div>
 </div>

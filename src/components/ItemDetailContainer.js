@@ -1,7 +1,6 @@
 import { ItemDetail } from "./ItemDetail";
 import { CustomFetch } from "./customFetch";
 import { useEffect, useState } from "react";
-import ItemCount from './ItemCount'
 import { useParams } from "react-router-dom";
 const { productos } = require('./productos');
 
