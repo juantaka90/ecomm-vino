@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "./CartContext";
 
 export function Cart () {
-    const thing = useContext(CartContext);
+    const {thing, clearCart }= useContext(CartContext);
 
     return (
         <div>
@@ -20,6 +20,10 @@ export function Cart () {
                 </div>
                 </div>
                 )}
+            {
+            <button type="button" className="btn btn-danger" onClick={clearCart}> Vaciar Carrito </button>
+            }
+            
     </div>
     );
             }

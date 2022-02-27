@@ -12,13 +12,15 @@ const CartContextProvider = ({children}) => {
                 id: item.id,
                 name: item.name,
                 URL: item.URL,
-                price: item.cost,
+                cost: item.cost,
                 stock: cant,
             }]);
         }
-
+        const clearCart = () => {
+            setProductos([])
+        }
     return (
-        <CartContext.Provider value={{productos, addToCart}}> {children} </CartContext.Provider>
+        <CartContext.Provider value={{productos, addToCart, clearCart}}> {children} </CartContext.Provider>
     )
 }
 

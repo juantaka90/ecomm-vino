@@ -10,7 +10,7 @@ export function ItemDetail ({name, stock, cost, URL, describe}){
     const onAdd = (cant) => {
         alert("Seleccionaste " + cant + "items");
         setitemCount(cant);
-        thing.addToCart(ItemDetail, cant)
+        thing.addToCart({name, stock, cost, URL, describe}, cant)
     }
 
     return (
