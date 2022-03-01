@@ -6,8 +6,15 @@ const CartContextProvider = ({children}) => {
     const [productos, setProductos] = useState([]);
 
         const addToCart = (item, cant) => {
-            setProductos([
-                ...productos,
+        const theSame = productos.find((productos) => productos.URL === item.URL);
+        if (theSame) {
+            setProductos(
+                productos.map((productos) => {
+                return { ...productos, count: productos.count + 1 };
+                })
+            );
+        }else {
+            setProductos([...productos,
                 {
                 id: item.id,
                 name: item.name,
@@ -16,12 +23,18 @@ const CartContextProvider = ({children}) => {
                 stock: cant,
             }]);
         }
+    }
         const clearCart = () => {
             setProductos([])
+        };
+        
+        const deleteObject = (URL) => {
+            setProductos(productos.filter((productos) => productos.URL !== URL));
         }
-    return (
-        <CartContext.Provider value={{productos, addToCart, clearCart}}> {children} </CartContext.Provider>
-    )
-}
+        return (
+            <CartContext.Provider value={{productos, addToCart, clearCart, deleteObject}}> {children} </CartContext.Provider>
+        )
+    
+    }
 
 export default CartContextProvider;

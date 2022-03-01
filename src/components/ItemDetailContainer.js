@@ -9,7 +9,7 @@ export function ItemDetailContainer () {
     const {id} = useParams()
     
     useEffect (() => {
-        CustomFetch(2000, productos.find(i => i.id === parseInt(id)))
+        CustomFetch(1000, productos.find(i => i.id === parseInt(id)))
         .then(response => setData(response))
         .catch(error => console.log(error))
     }, [id]);

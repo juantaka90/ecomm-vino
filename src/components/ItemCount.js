@@ -11,7 +11,7 @@ export default function ItemCount({ onAdd })  {
     const [itemCount, setItemCount] = React.useState(1);
     
     return (
-    <div style={{ display: "block", padding: 40 }} >
+    <div style={{ display: "block", padding: 20 }} >
         <button onClick={() => onAdd(itemCount)} type="button" className="btn btn-primary" > Agregar Al Carrito </button>
         <div>
         <Badge color="primary" badgeContent={itemCount}>

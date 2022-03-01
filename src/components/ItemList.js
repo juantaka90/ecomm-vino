@@ -10,7 +10,7 @@ export function ItemList() {
 
     useEffect (() => {
         if (categoryId === undefined) {
-            CustomFetch(2000, productos)
+            CustomFetch(1000, productos)
         .then(response => setDato(response))
         .catch(error => console.log(error))
         } else {

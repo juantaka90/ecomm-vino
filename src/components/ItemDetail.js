@@ -5,12 +5,12 @@ import { CartContext } from './CartContext';
 
 export function ItemDetail ({name, stock, cost, URL, describe}){
     const [itemCount, setitemCount] = useState(0);
-    const thing = useContext(CartContext);
+    const {addToCart} = useContext(CartContext);
 
     const onAdd = (cant) => {
         alert("Seleccionaste " + cant + "items");
         setitemCount(cant);
-        thing.addToCart({name, stock, cost, URL, describe}, cant)
+        addToCart({name, stock, cost, URL, describe}, cant)
     }
 
     return (
