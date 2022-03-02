@@ -31,8 +31,13 @@ const CartContextProvider = ({children}) => {
         const deleteObject = (URL) => {
             setProductos(productos.filter((productos) => productos.URL !== URL));
         }
+
+        const prodCant = () => {
+            let cant = productos.map(productos=> productos.prodCant);
+            return cant.reduce(((previousValue, currentValue) => parseInt(previousValue + currentValue)), 0);
+        }
         return (
-            <CartContext.Provider value={{productos, addToCart, clearCart, deleteObject}}> {children} </CartContext.Provider>
+            <CartContext.Provider value={{productos, addToCart, clearCart, deleteObject, prodCant}}> {children} </CartContext.Provider>
         )
     
     }

@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
 export function Cart () {
@@ -7,6 +8,9 @@ export function Cart () {
     return (
         <div>
         <h1>Carrito</h1>
+        <div>
+        <Link to='/'><button type="button" className="btn btn-success"> Seguir Comprando </button></Link>
+        </div>
         {
             productos.map(item =>
                 <div className=" row-cols-3 row-cols-md-3 ">
