@@ -34,7 +34,7 @@ const CartContextProvider = ({children}) => {
 
         const prodCant = () => {
             let cant = productos.map(productos=> productos.prodCant);
-            return cant.reduce(((previousValue, currentValue) => parseInt(previousValue + currentValue)), 0);
+            return cant.reduce(((previousValue, currentValue) => (previousValue + currentValue)), 0);
         }
         return (
             <CartContext.Provider value={{productos, addToCart, clearCart, deleteObject, prodCant}}> {children} </CartContext.Provider>
