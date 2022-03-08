@@ -4,12 +4,12 @@ import { useContext } from "react";
 import { CartContext } from "./CartContext";
 
 export default function App() {
-const productos = useContext(CartContext);
+const totalI = useContext(CartContext);
 
 return (
     <div style={{ display: "block", padding: 30 }}>
     <div>
-        <Badge color="secondary" badgeContent={productos.prodCant()}>
+        <Badge color="secondary" badgeContent={totalI}>
         <ShoppingCartIcon />{" "}
         </Badge>
 </div>

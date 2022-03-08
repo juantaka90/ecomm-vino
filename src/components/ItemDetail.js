@@ -3,25 +3,26 @@ import { useContext, useState } from 'react';
 import ItemCount from './ItemCount';
 import { CartContext } from './CartContext';
 
-export function ItemDetail ({name, stock, cost, URL, describe}){
+export function ItemDetail (item){
     const [itemCount, setitemCount] = useState(0);
-    const {addToCart} = useContext(CartContext);
+    const {addToCart, prodCant} = useContext(CartContext);
 
     const onAdd = (cant) => {
         alert("Seleccionaste " + cant + "items");
         setitemCount(cant);
-        addToCart({name, stock, cost, URL, describe}, cant)
+        addToCart(item, cant)
+        prodCant(cant)
     }
 
     return (
         <div className=" row-cols-3 row-cols-md-5 ">
 <div className="col">
     <div className="card h-50">
-    <img src={URL} className="card-img-top" alt={name}/>
+    <img src={item.URL} className="card-img-top" alt={item.name}/>
     <div className="card-body">
-        <h5 className="card-title">cantidad {stock}</h5>
-        <p className="card-text">precio {cost}</p>
-        <p className= "card-text">Descripcion: {describe}</p>
+        <h5 className="card-title">cantidad {item.stock}</h5>
+        <p className="card-text">precio {item.cost}</p>
+        <p className= "card-text">Descripcion: {item.describe}</p>
     </div>
     <div className="card-footer">
         <small className="text-muted"></small>

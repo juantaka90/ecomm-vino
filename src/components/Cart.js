@@ -1,33 +1,30 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
 export function Cart () {
     const {productos, clearCart, deleteObject }= useContext(CartContext);
 
     return (
-        <div>
+        <div className="contenedorItems">
         <h1>Carrito</h1>
-        <div>
-        <Link to='/'><button type="button" className="btn btn-success"> Seguir Comprando </button></Link>
-        </div>
         {
-            productos.map(item =>
-                <div className=" row-cols-3 row-cols-md-3 ">
-                <div className="card h-15">
-                <div className="card-body">
-                <p>{item.name}</p>
-                <img src={item.URL} className="card-img-top" alt={URL.item}></img>
-                <p>Precio : {item.cost}</p>
-                <p>Cantidad : {item.stock}</p>
-                <button type="button" className="btn btn-secondary" onClick={() => deleteObject(item.URL)}> Borrar Producto </button>
-                </div>
-                </div>
-                </div>
-                )}
-            {
-            <button type="button" className="btn btn-danger" onClick={clearCart}> Vaciar Carrito </button>
-            }
-    </div>
-    );
-            }
+            productos.length > 0
+        ?<button className="btn btn-dark" type="button" id="btnVaciar" onClick={clearCart}> Vaciar </button>
+        :<h5> Su Carrito Esta Vacio </h5> }
+
+        {productos.length>0 && productos.map(item => (
+            <div className="contenedorItemDescripcion">
+            
+            <div className="contenedorItemDetallesCarrito">
+            <img src={item.URL} alt={item.name}></img>
+            <div className="contenedorItem">
+            <h5>{item.name}</h5>
+            <button className="btn btn-dark" type="button" onClick={()=>deleteObject(item.id)}> Eliminar </button>
+            </div>
+            </div>
+            <div className="contenedorItem"></div>
+            <h6 className="textDescripcion">{item.cantidadItems} items</h6>
+            <h6 className="textPrecio"> Precio Por Unidad: $ {item.cost}</h6>
+            <h6 className="textPrecio"> Precio Total: $ {item.cost*item.cantidadItems}</h6>
+            </div>))
+        }</div>)}
