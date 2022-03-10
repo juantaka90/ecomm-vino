@@ -1,40 +1,20 @@
-import { CustomFetch } from './customFetch';
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import Item from './Item';
-import {productos} from './productos';
 
-export function ItemList() {
-    const [ item , setDato] = useState([]);
-    const {categoryId} = useParams();
+export function ItemList({item}) {
 
-    useEffect (() => {
-        if (categoryId === undefined) {
-            CustomFetch(1000, productos)
-        .then(response => setDato(response))
-        .catch(error => console.log(error))
-        } else {
-        CustomFetch(2000, productos.filter(item => item.category === categoryId))
-        .then(response => setDato(response))
-        .catch(error => console.log(error))
-        }
-    },[categoryId]);
-    
-    if(item.length === 0){
-        return <div><p>Cargando...</p></div>
-    }else {
-                return (
-        <div>
-
-            {item.map ((item) => (
-            <Item
-            key={item.id}
-            name={item.name}
-            stock={item.stock}
-            cost={item.cost}
-            URL={item.URL}
-            id={item.id}
-        />
-            ))}
-        </div>
-        )}}
+    return (
+        <div className=" row-cols-3 row-cols-md-5 ">
+<div className= "col" >
+    <div className="card h-50">
+    <img src={item.URL} className="card-img-top" alt={item.name}/>
+    <div className="card-body">
+        <h5 className="card-title">cantidad {item.stock}</h5>
+        <p className="card-text">precio {item.cost}</p>
+        <p className= "card-text">Descripcion: {item.describe}</p>
+    </div>
+    <div className="card-footer">
+        <small className="text-muted"></small>
+    </div>
+    </div>
+    </div>
+    </div>
+        )}

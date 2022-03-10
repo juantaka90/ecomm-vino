@@ -2,8 +2,18 @@ import { useContext } from "react";
 import { CartContext } from "./CartContext";
 
 export function Cart () {
-    const {productos, clearCart, deleteObject }= useContext(CartContext);
-
+    const {productos, clearCart, deleteObject, inCart }= useContext(CartContext);
+    const createOrder = () => {
+        let order = {
+            buyer: {
+                email: "jorgito@hotmail.com",
+                name: "jorgito el loquillo",
+                adress: "entre y tanto",
+            },
+            items: inCart.map( (item) => {return {id: item.id, price: item.cost, name: item.name, cant: item.cantidadItems}})
+        }
+        console.log(order);
+    }
     return (
         <div className="contenedorItems">
         <h1>Carrito</h1>
@@ -24,7 +34,8 @@ export function Cart () {
             </div>
             <div className="contenedorItem"></div>
             <h6 className="textDescripcion">{item.cantidadItems} items</h6>
-            <h6 className="textPrecio"> Precio Por Unidad: $ {item.cost}</h6>
-            <h6 className="textPrecio"> Precio Total: $ {item.cost*item.cantidadItems}</h6>
+            <h6 className="textPrecio"> Precio Por Unidad: {item.cost}</h6>
+            <h6 className="textPrecio"> Precio Total: {item.cost + item.cantidadItems}</h6>
+            <button className="btn btn-dark" type="button" onClick={createOrder}> Orden </button>
             </div>))
         }</div>)}
