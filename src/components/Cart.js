@@ -10,7 +10,7 @@ export function Cart () {
                 name: "jorgito el loquillo",
                 adress: "entre y tanto",
             },
-            items: inCart.map( (item) => {return {id: item.id, price: item.cost, name: item.name, cant: item.cantidadItems}})
+            items: inCart.map( (item) => {return {id: item.id, price: item.cost, name: item.name, cant: item.cantidadItems, stock: item.stock}})
         }
         console.log(order);
     }
