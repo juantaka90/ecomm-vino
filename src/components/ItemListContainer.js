@@ -31,18 +31,6 @@ function ItemListContainer() {
 
 return (
     <div>
-
-        {item.map ((item) => (
-        <ItemList
-        name={item.name}
-        stock={item.stock}
-        cost={item.cost}
-        URL={item.URL}
-        id={item.id}
-    />
-        ))}
-    </div>
-)
-    }
-
+        <ItemList productos={item}/>
+        </div>)}
 export default ItemListContainer;
