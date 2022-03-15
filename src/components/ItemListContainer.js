@@ -1,33 +1,33 @@
 import { ItemList } from "./ItemList";
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { doc, getDoc } from "firebase/firestore"
+import { collection, getDocs } from "firebase/firestore"
 import db from './firebaseConfig';
+import { query, where } from '@firebase/firestore'
 
 function ItemListContainer() {
     const [item, setItem] = useState([]);
     const {id} = useParams();
 
-
     useEffect (() => {
-        const firestoreItem = async () => {
-            const docRef = doc(db, "productos", id);
-            const docSnap = await getDoc(docRef);
-
-            if (docSnap.exists()) {
-            return {
-                id: id,
-                ...docSnap.data()
+        const firestoreFetch = async () => {
+            let q;
+            if (id) {
+                q = query(collection(db, "productos"), where('category', '==', id));
+            } else {
+                q = query(collection(db, "productos"));
             }
+            const querySnapshot = await getDocs(q);
+            return querySnapshot.docs.map( document => ({
+                id: document.id,
+                ...document.data()
+            }))
         }
-            else {
-                console.log("Item no encontrado");
-            }
-        }
-        firestoreItem()
-            .then(data => setItem(data))
+        firestoreFetch()
+            .then(result => setItem(result))
             .catch(error => console.log(error));
 }, [id]);
+
 
 return (
     <div>

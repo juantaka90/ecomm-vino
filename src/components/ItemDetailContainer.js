@@ -2,7 +2,7 @@ import { ItemDetail } from "./ItemDetail";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import db from './firebaseConfig';
-import { collection, getDocs } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 
 export function ItemDetailContainer () {
@@ -10,17 +10,25 @@ export function ItemDetailContainer () {
     const {id} = useParams()
     
     useEffect (() => {
-        const firestoreFetch = async () => {
-            const querySnapshot = await getDocs(collection(db, "productos"));
-            return querySnapshot.docs.map( document => ({
-                id: document.id,
-                ...document.data()
-            }))
+        const firestoreItem = async () => {
+            const docRef = doc(db, "productos", id);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+            return {
+                id: id,
+                ...docSnap.data()
+            }
         }
-        firestoreFetch()
-            .then(result => setData(result))
+            else {
+                console.log("Item no encontrado");
+            }
+        }
+        firestoreItem()
+            .then(data => setData(data))
             .catch(error => console.log(error));
 }, [id]);
+
 
 
 return (
