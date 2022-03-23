@@ -19,6 +19,7 @@ const CartContextProvider = ({children}) => {
                 URL: item.URL,
                 cost: item.cost,
                 cantidadItems: cant,
+                stock: item.stock,
             }]);
         }
     }

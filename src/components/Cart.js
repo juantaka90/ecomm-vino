@@ -13,12 +13,12 @@ export function Cart () {
                 adress: "entre y tanto",
             },
             date: serverTimestamp(),
-            items: productos.map( (item) => {return {id: item.id, price: item.cost, name: item.name, cant: item.cantidadItems, stock: item.stock}})
+            items: productos.map( (item) => {return {URL: item.URL, price: item.cost, name: item.name, cant: item.cantidadItems, stock: item.stock}})
         }
         console.log(order);
 
         const createOrderInFirestore = async () => {
-            const newOrderRef = doc(collection(db, "orders"));
+            const newOrderRef = doc(collection(db, "ordenes"));
             await setDoc(newOrderRef, order);
             return newOrderRef;
         }
@@ -26,8 +26,8 @@ export function Cart () {
         createOrderInFirestore()
         .then(result => alert('Tu Orden Fue Creada: ' + result.id))
         .catch(error => console.log(error));
-
     }
+
     return (
         <div className="contenedorItems">
         <h1>Carrito</h1>
