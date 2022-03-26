@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-item {
+  padding-inline-start: 2rem;
+  font-size: larger;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#item {
+width: 500px;
+display: inline-flex;
+padding: 95px;
+}
