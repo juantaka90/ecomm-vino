@@ -10,4 +10,14 @@ En el e-commerce se pueden apreciar un listado de 6 productos, cada producto tie
 
 A continucacion de adjuntaran unas capturas de pantalla del e-commerce.
 
-Vista los productos que se disponen por el momento:
+Vista de los productos que se disponen por el momento:
+
+![6 productos](https://user-images.githubusercontent.com/89479164/160500427-c8ed8054-ed36-4730-8dbd-331dfb6df8b4.jpg)
+
+Vista de una de sus categorias:
+
+![categoriatintos](https://user-images.githubusercontent.com/89479164/160500671-d57303c9-dedb-43ec-a55a-f38d2537bbfa.jpg)
+
+Vista del carrito de compras con 1 producto:
+
+![carrito](https://user-images.githubusercontent.com/89479164/160500772-6ab73a2e-93a6-48f5-938a-e946e735b0a5.jpg)
