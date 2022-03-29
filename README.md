@@ -1,8 +1,13 @@
 Primeros pasos para descargar y utilizar la app e-commerce:
+
 1-Ingresar al link del repositorio https://github.com/juantaka90/ecomm-vino.
+
 2-Hacer click en descargar o clonar, una vez descargado se abrira un archivo .zip y extraer dicho fichero en una carpeta.
+
 3-Utilizar un editor de texto a gusto, ya sea Visual Studio Code, Atom, etc.
+
 4-Descargar en instalar las Librerias de bootstrap https://getbootstrap.com/docs/5.1/getting-started/download/ y Material Ui https://mui.com/getting-started/installation/ tomando en cuenta la documentacion de cada libreria.
+
 5-Una vez de tener todo los pasos anteriores realizados, ejecutar la aplicacion usando el comando npm start.
 
 
