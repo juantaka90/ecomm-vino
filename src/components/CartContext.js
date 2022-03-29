@@ -37,10 +37,11 @@ const CartContextProvider = ({children}) => {
         const inCart = (id) => {
             return productos.find((p) => p.id === id)
         };
-
+        console.log(inCart)
         const prodCant = (value) => {
             setTotalI(totalI+value)
         }
+        console.log(prodCant)
 
         return (
             <CartContext.Provider value={{productos, addToCart, clearCart, deleteObject, prodCant, inCart, totalI, setTotalI}}> {children} </CartContext.Provider>
