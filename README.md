@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+Primeros pasos para descargar y utilizar la app e-commerce:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1-Ingresar al link del repositorio https://github.com/juantaka90/ecomm-vino.
 
-## Available Scripts
+2-Hacer click en descargar o clonar, una vez descargado se abrira un archivo .zip y extraer dicho fichero en una carpeta.
 
-In the project directory, you can run:
+3-Utilizar un editor de texto a gusto, ya sea Visual Studio Code, Atom, etc.
 
-### `npm start`
+4-Descargar en instalar las Librerias de bootstrap https://getbootstrap.com/docs/5.1/getting-started/download/ y Material Ui https://mui.com/getting-started/installation/ tomando en cuenta la documentacion de cada libreria.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+5-Una vez de tener todo los pasos anteriores realizados, ejecutar la aplicacion usando el comando npm start.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Aplicacion e-commerce.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Este proyecto es una app  e-commerce utilizada para la comercializacion de bebidas alcoholicas para la marca Vinos Atlas situada en Berisso, Provincia de Buenos Aires. Dicha marca que esta dando sus primeros pasos nos contacto y solicito la elaboracion de un e-commerce que les permita empezar a comercializar sos primeras adquisiciones, para luego con el tiempo, seguir ampliando dicho e-commerce.
 
-### `npm run build`
+El e-commerce se desarrollo utilizando React y Javascript.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para empezar a agregarle formato al e-commerce se utilizaron las librerias de Bootstrap y Material Ui.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+En el e-commerce se pueden apreciar un listado de 6 productos, cada producto tiene su respectiva seccion, dispone de un carrito de compras en el cual se puede ir comprando diferentes productos que se iran sumando automaticamente al carrito. En el carrito de compras se puede apreciar unos botones el cual le permitira al usuario poder vaciar el carrito completo, eleminar 1 producto el cual ya no desee adquirir y al terminar la compra podra ejecutar una orden, la cual le comunicara al usuario mediante una ventana emergente que su orden fue creada.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A continucacion de adjuntaran unas capturas de pantalla del e-commerce.
 
-### `npm run eject`
+Vista de los productos que se disponen por el momento:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![6 productos](https://user-images.githubusercontent.com/89479164/160500427-c8ed8054-ed36-4730-8dbd-331dfb6df8b4.jpg)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Vista de una de sus categorias:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![categoriatintos](https://user-images.githubusercontent.com/89479164/160500671-d57303c9-dedb-43ec-a55a-f38d2537bbfa.jpg)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Vista del carrito de compras con 1 producto:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![carrito](https://user-images.githubusercontent.com/89479164/160500772-6ab73a2e-93a6-48f5-938a-e946e735b0a5.jpg)
